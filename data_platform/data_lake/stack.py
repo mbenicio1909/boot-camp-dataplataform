@@ -9,6 +9,7 @@ from data_platform import active_environment
 class DataLakeStack(core.Stack):
     def __init__(self, scope: core.Construct, **kwargs) -> None:
         self.deploy_env = active_environment
+        print(active_environment)
         super().__init__(scope, id=f'{self.deploy_env.value}-data-lake-stack', **kwargs)
 
         self.data_lake_raw_bucket = BaseDataLakeBucket(
