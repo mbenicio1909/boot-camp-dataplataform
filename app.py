@@ -1,7 +1,7 @@
 # from data_platform.athena.stack import AthenaStack
 from aws_cdk import core
 from data_platform.data_lake.stack import DataLakeStack
-# from data_platform.common_stack import CommonStack
+from data_platform.common_stack import CommonStack
 # from data_platform.dms.stack import DmsStack
 # from data_platform.kinesis.stack import KinesisStack
 # from data_platform.glue_catalog.stack import GlueCatalogStack
