@@ -1,9 +1,13 @@
 import boto3
+from botocore.config import Config
 import json
 from fake_web_events import Simulation
 
-client = boto3.client("firehose")
+my_config = Config(
+    region_name = 'us-east-1'
+)
 
+client = boto3.client("firehose" , config=my_config)
 
 def put_record(event):
     data = json.dumps(event) + "\n"

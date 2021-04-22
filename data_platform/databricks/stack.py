@@ -127,7 +127,7 @@ class DatabricksStack(core.Stack):
                         "sqs:ChangeMessageVisibilityBatch",
                     ],
                     resources=[
-                        f"arn:aws:s3:::s3-belisco-{self.deploy_env.value}-data-lake-*",
+                        f"arn:aws:s3:::s3-mbenicio-{self.deploy_env.value}-data-lake-*",
                         f"arn:aws:sqs:{self.region}:{self.account}:databricks-auto-ingest-*",
                         f"arn:aws:sns:{self.region}:{self.account}:databricks-auto-ingest-*",
                     ],
@@ -149,8 +149,8 @@ class DatabricksStack(core.Stack):
 
         bucket = s3.Bucket(
             self,
-            id=f"s3-{self.deploy_env.value}-belisco-databricks-bucket",
-            bucket_name=f"s3-{self.deploy_env.value}-belisco-databricks-bucket",
+            id=f"s3-{self.deploy_env.value}-mbenicio-databricks-bucket",
+            bucket_name=f"s3-{self.deploy_env.value}-mbenicio-databricks-bucket",
         )
         bucket.add_to_resource_policy(
             iam.PolicyStatement(
@@ -189,8 +189,8 @@ class DatabricksStack(core.Stack):
                         "s3:PutObjectAcl",
                     ],
                     resources=[
-                        f"arn:aws:s3:::s3-belisco-turma-4-{self.deploy_env.value}-data-lake-*",
-                        f"arn:aws:s3:::s3-belisco-turma-4-{self.deploy_env.value}-data-lake-*/*",
+                        f"arn:aws:s3:::s3-mbenicio-turma-4-{self.deploy_env.value}-data-lake-*",
+                        f"arn:aws:s3:::s3-mbenicio-turma-4-{self.deploy_env.value}-data-lake-*/*",
                     ],
                 ),
                 iam.PolicyStatement(
